@@ -12,19 +12,18 @@ export class ProductsService {
     Product[]
   >([]);
 
+  URL = "http://localhost:5000/api/products/";
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
     if (!ProductsService.productslist) {
-      this.http
-        .get<any>("http://localhost:5000/api/products/")
-        .subscribe((data) => {
-          console.log(data);
+      this.http.get<any>(this.URL).subscribe((data) => {
+        console.log(data);
 
-          ProductsService.productslist = data;
+        ProductsService.productslist = data;
 
-          this.products$.next(ProductsService.productslist);
-        });
+        this.products$.next(ProductsService.productslist);
+      });
     } else {
       this.products$.next(ProductsService.productslist);
     }
@@ -34,6 +33,9 @@ export class ProductsService {
 
   create(prod: Product): Observable<Product[]> {
     ProductsService.productslist.push(prod);
+    this.http.post<any>(this.URL, prod).subscribe((res) => {
+      console.log(res);
+    });
     this.products$.next(ProductsService.productslist);
 
     return this.products$;
@@ -53,6 +55,9 @@ export class ProductsService {
         element.rating = prod.rating;
       }
     });
+    this.http.put<any>(this.URL, prod).subscribe((res) => {
+      console.log(res);
+    });
     this.products$.next(ProductsService.productslist);
 
     return this.products$;
@@ -64,6 +69,9 @@ export class ProductsService {
         return value.id !== id;
       }
     );
+    this.http.delete<any>(this.URL + id).subscribe((res) => {
+      console.log(res);
+    });
     this.products$.next(ProductsService.productslist);
     return this.products$;
   }
