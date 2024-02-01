@@ -28,11 +28,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "SERVER LISTENING!" });
 });
 
-app.use("/api/products", productRoutes); // Enregistrement des routes product
+app.use("/products", productRoutes); // Enregistrement des routes product
 app.use("/images", express.static(path.join(__dirname, "images"))); // Enregistrement des images
 
 module.exports = app; // Export de l'application express

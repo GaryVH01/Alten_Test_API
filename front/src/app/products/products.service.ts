@@ -12,7 +12,7 @@ export class ProductsService {
     Product[]
   >([]);
 
-  URL = "http://localhost:5000/api/products/";
+  URL = "http://localhost:5000/products/";
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {

@@ -4,11 +4,11 @@ API REST développée avec NODEJS, EXPRESS & MONGODB
 
 IMPLEMENTATION DU CRUD :
 
-- POST : Création d'un produit ("/api/products")
-- GET : Récupération d'un ou plusieurs produits ("/api/products" ou "/api/products/:id)
-- DELETE : Suppression d'un produit ("/api/products/:id")
-- PATCH : Modification partielle d'un produit ("/api/products/:id")
-- PUT : Modification complète d'un produit ("/api/products/:id")
+- POST : Création d'un produit ("/products")
+- GET : Récupération d'un ou plusieurs produits ("/products" ou "/api/products/:id)
+- DELETE : Suppression d'un produit ("/products/:id")
+- PATCH : Modification partielle d'un produit ("/products/:id")
+- PUT : Modification complète d'un produit ("/products/:id")
 
 Pour lancer le server utilisez la commande 'nodemon server'. Le serveur écoutera sur le port 5000 si celui-ci est disponible.
 
