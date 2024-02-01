@@ -11,7 +11,7 @@ const productSchema = mongoose.Schema(
     quantity: { type: Number, required: true },
     inventoryStatus: { type: String, required: true },
     category: { type: String, required: true },
-    image: { type: String, required: false },
+    image: { type: String, required: false, default: null },
     rating: { type: Number, required: false, default: 0 },
   },
   {

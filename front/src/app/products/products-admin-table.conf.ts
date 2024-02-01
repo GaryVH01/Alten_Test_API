@@ -4,22 +4,22 @@ import { ControlType } from "app/shared/utils/crud-item-options/control-type.mod
 import { TypeInput } from "app/shared/utils/crud-item-options/type.model";
 
 export const PRODUCT_TABLE_CONF: CrudItemOptions[] = [
-  {
-    key: "id",
-    controlType: ControlType.INPUT,
-    type: TypeInput.TEXT,
-    label: "ID",
-    columnOptions: {
-      minScreenSize: ScreenWidth.large,
-      hidden: true,
-    },
-    controlOptions: {
-      hideOnCreate: false,
-      hideOnUpdate: false,
-      disableOnCreate: true,
-      disableOnUpdate: true,
-    },
-  },
+  // {
+  //   key: "id",
+  //   controlType: ControlType.INPUT,
+  //   type: TypeInput.TEXT,
+  //   label: "ID",
+  //   columnOptions: {
+  //     minScreenSize: ScreenWidth.large,
+  //     hidden: true,
+  //   },
+  //   controlOptions: {
+  //     hideOnCreate: true,
+  //     hideOnUpdate: false,
+  //     disableOnCreate: true,
+  //     disableOnUpdate: true,
+  //   },
+  // },
   {
     key: "code",
     controlType: ControlType.INPUT,

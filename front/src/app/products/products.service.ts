@@ -33,7 +33,6 @@ export class ProductsService {
 
   create(prod: Product): Observable<Product[]> {
     console.log(prod);
-
     ProductsService.productslist.push(prod);
     this.http.post<any>(this.URL, prod).subscribe((res) => {
       console.log(res);

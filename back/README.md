@@ -31,3 +31,13 @@ Architecture:
 # Front-end
 
 Le front-end envoie les requêtes directement à l'API pour afficher les produits.
+
+# PROBLEMES
+
+Toutes les requêtes émises avec POSTMAN fonctionnent correctement.
+Le frontend est lié au backend.
+Pour la partie frontend il subsiste des erreurs :
+
+- Suppression
+- Modification
+  Probablement un clonflit avec la génération des ID.
