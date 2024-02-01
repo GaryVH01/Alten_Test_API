@@ -30,4 +30,4 @@ Architecture:
 
 # Front-end
 
-Le front-end envoie les requêtes directement à l'API pour afficher les produits. (si le path de la requête get est modifié dans le fichier 'products.service.ts' par l'url suivante 'http://localhost:5000/api/products')
+Le front-end envoie les requêtes directement à l'API pour afficher les produits.

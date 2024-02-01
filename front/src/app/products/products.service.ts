@@ -32,6 +32,8 @@ export class ProductsService {
   }
 
   create(prod: Product): Observable<Product[]> {
+    console.log(prod);
+
     ProductsService.productslist.push(prod);
     this.http.post<any>(this.URL, prod).subscribe((res) => {
       console.log(res);
@@ -55,7 +57,7 @@ export class ProductsService {
         element.rating = prod.rating;
       }
     });
-    this.http.put<any>(this.URL, prod).subscribe((res) => {
+    this.http.put<any>(this.URL + prod.id, prod).subscribe((res) => {
       console.log(res);
     });
     this.products$.next(ProductsService.productslist);
@@ -69,6 +71,7 @@ export class ProductsService {
         return value.id !== id;
       }
     );
+
     this.http.delete<any>(this.URL + id).subscribe((res) => {
       console.log(res);
     });

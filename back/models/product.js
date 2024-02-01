@@ -3,7 +3,7 @@ const mongoose = require("mongoose"); // importation de mongoose pour création 
 // Création d'un modèle pour la création d'un produit dans la base de données
 const productSchema = mongoose.Schema(
   {
-    id: { type: Number, required: true },
+    id: { type: Number, required: false },
     code: { type: String, required: true },
     name: { type: String, required: true },
     description: { type: String, required: true },
