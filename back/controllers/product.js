@@ -76,17 +76,17 @@ exports.patchProduct = (req, res) => {
 exports.deleteProduct = (req, res) => {
   Product.findOne({ id: req.params.id }) // On récupère l'objet dans la base de données
     .then((product) => {
-      const filename = product.image.split("/images/")[1]; // on récupère l'url de l'image pour la supprimer
-      fs.unlink(`images/${filename}`, () => {
-        Product.deleteOne({ id: req.params.id }) // Puis on supprime le produit de la base de données
-          .then(() => {
-            res.status(200).json({ message: "Objet supprimé !" });
-          })
-          .catch((error) => {
-            res.status(401).json({ error });
-          });
-      });
+      // const filename = product.image.split("/images/")[1]; // on récupère l'url de l'image pour la supprimer
+      // fs.unlink(`images/${filename}`, () => {
+      Product.deleteOne({ id: req.params.id }) // Puis on supprime le produit de la base de données
+        .then(() => {
+          res.status(200).json({ message: "Objet supprimé !" });
+        })
+        .catch((error) => {
+          res.status(401).json({ error });
+        });
     })
+    // })
     .catch((error) => {
       res.status(500).json({ error });
     });
